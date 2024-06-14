@@ -1,0 +1,127 @@
+.footer-container{
+    border-top: 1px solid #ABB2BF;
+    
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 0;
+        max-width: 1440px;
+        width: 80%;
+        margin: 0 auto;
+
+        .content{
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            color: white;
+
+            div{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                
+                span{
+                    color: #ABB2BF;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+            p{
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+
+        .media{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h3{
+                font-size: 24px;
+                font-weight: 500;
+                color: white;
+            }
+
+            .icons{
+                display: flex;
+                gap: 20px;
+
+                a{
+                color: #ABB2BF;
+                transition: all .3s;
+
+                &:hover{
+                    color: white;
+
+                }
+
+                    .icon{
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+
+        }
+
+    }
+    .copyright{
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        color: #ABB2BF;
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 1600px){
+    .footer-container{
+
+        .copyright{
+            font-size: 20px;
+        }
+        .top{
+            
+
+            .content{
+                
+                div{
+                    font-size: 20px;
+
+                    span{
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .media{
+                h3{
+                    font-size: 28px;
+
+                }
+                .icons{
+
+                    a{
+                        .icon{
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 480px){
+    .footer-container{
+        .top{
+            flex-direction: column;
+            gap: 40px;
+            align-items: flex-start;
+        }
+    }
+}

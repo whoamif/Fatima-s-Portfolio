@@ -1,0 +1,230 @@
+.about-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+    padding: 50px 0;
+
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+        color: white;
+
+        div{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            
+            span{
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            h3{
+                font-size: 32px;
+                font-weight: 500;
+                span{
+                    font-size: 32px;
+                    font-weight: 500;
+                    color: #C778DD;
+                    margin-right: 2px;
+                }
+            }
+
+            div{
+                height: 1px;
+                width: 400px;
+                background-color: #C778DD;
+            }
+        }
+        
+    }
+
+    .bottom{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .left{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            p{
+                font-size: 16px;
+                font-weight: 400;
+                color: #ABB2BF;
+                max-width: 500px;
+                text-align: justify;
+                line-height: 25px;
+            }
+
+            a{
+                color: white;
+                font-weight: 500;
+                font-size: 16px;
+                padding: 8px 16px;
+                border: 1px solid #C778DD;
+                width: fit-content;
+                cursor: pointer;
+
+                transition: all .2s;
+
+                &:hover{
+                    background-color: rgba(199, 120, 221, 0.2);
+                }
+            }
+        }
+
+        
+        .right{
+            flex: 1;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img{
+                width: 400px;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        }
+    }
+
+}
+
+
+@media (min-width: 1600px){
+    .about-container{
+        .top{
+            
+            div{
+                h3{
+                    font-size: 38px;
+                }
+            }
+        }
+
+        .bottom{
+            .left{
+
+                p{
+                    font-size: 18px;
+                }
+
+                a{
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 960px){
+    .about-container{
+        .bottom{
+            flex-direction: row;
+            .right{
+
+                img{
+                    width: 350px;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 810px){
+    .about-container{
+
+        .top{
+
+            div{
+                padding: 0 20px;
+                
+                h3{
+                    font-size: 20px;
+    
+                    span{
+                        font-size: 20px;
+                    }
+                }
+
+                .line{
+                    width: 100px;
+                }
+            }
+        }
+
+        .bottom{
+            .right{
+                padding: 0 20px;
+                img{
+                    width: 300px;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .left{
+                padding: 0 20px;
+                p{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 640px){
+    .about-container{
+        
+        
+
+        .bottom{
+            flex-direction: column;
+            gap: 50px;
+            .right{
+                padding: 0 20px;
+                img{
+                    width: 400px;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .left{
+                padding: 0 20px;
+                p{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px){
+    .about-container{
+
+        .bottom{
+            .right{
+                padding: 0 20px;
+                img{
+                    width: 300px;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

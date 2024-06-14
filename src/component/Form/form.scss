@@ -1,0 +1,154 @@
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 40px;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            gap: 20px;
+
+            .form-item{
+                position: relative;
+                flex: 1;
+
+                input{
+                    width: fit-content;
+                }
+            }
+
+            span{
+                position: absolute;
+                top: 0;
+                left: 1rem;
+                transform: translateY(-80%);
+                color: #ABB2BF;
+                background-color: #282C33;
+                padding: 0 10px;
+            }
+
+            input, textarea{
+                width: 100%;
+                border: 1px solid #ABB2BF;
+                // background-color: transparent;
+                background-color: #282C33;
+                color: #ABB2BF;
+                padding: 15px 8px;
+                font-size: 16px;
+                font-weight: 400;
+                &:hover{
+                    background-color: rgb(171, 178, 191, .1);
+                }
+            }
+
+            textarea{
+                resize: none;
+            }
+        }
+
+        button{
+            border: 1px solid #C778DD;
+            padding: 8px 16px;
+            color: white;
+            background-color: transparent;
+            font-size: 16px;
+            font-weight: 500;
+            width: fit-content;
+            cursor: pointer;
+            transition: all 0.3s;
+            &:hover{
+                background-color: rgb(171, 178, 191, .5);
+
+            }
+        }
+
+        .card{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid #ABB2BF;
+            color: #ABB2BF;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: capitalize;
+            width: 100%;
+
+            .content{
+                padding: 8px 10px;
+            }
+
+            .square{
+                width: 16px;
+                height: 16px;
+                margin-left: 10px;
+            }
+            
+            .green{
+                background-color: #2ecc71;
+            }
+            
+            .red{
+                background-color: #e74c3c;
+            }
+        }
+    }
+}
+
+@media (min-width: 1600px){
+    .form-container{
+        
+        form{
+            .item{
+
+                .form-item{
+                    font-size: 18px;
+                }
+            }
+
+            button{
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 880px){
+    .form-container{
+
+        form{
+
+            padding: 0 20px;
+        }
+    }
+}
+
+@media (max-width: 480px){
+    .form-container{
+
+        form{
+            width: 80%;
+
+            .item{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                .form-item{
+                    width: 100%;
+
+                    input{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

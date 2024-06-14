@@ -1,0 +1,279 @@
+.skills-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 150px 0;
+
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+        color: white;
+
+        div{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            
+            span{
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            h3{
+                font-size: 32px;
+                font-weight: 500;
+                span{
+                    font-size: 32px;
+                    font-weight: 500;
+                    color: #C778DD;
+                    margin-right: 2px;
+                }
+            }
+
+            div{
+                height: 1px;
+                width: 500px;
+                background-color: #C778DD;
+            }
+        }
+        
+    }
+
+    .bottom{
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        .shapes{
+            flex: 1;
+            // width: 350px;
+            // background-color: #C778DD;
+
+            img{
+                width: 350px;
+                height: 100%;
+                object-fit: cover;
+            }
+        }   
+
+        .content{
+            flex: 2;
+            display: grid;
+            grid-template-columns: repeat(3 , 1fr);
+            row-gap: 5px;
+            column-gap: 10px;
+            grid-template-areas: 
+            "first second third"
+            ". fourth fifth"
+            ". . sixth"
+            ;
+
+            // be careful with this when trying the responsive design
+            transform: translateY(70px);
+
+            .first{
+                grid-area: first;
+            }
+            .second{
+                grid-area: second;
+            }
+            .third{
+                grid-area: third;
+            }
+            .fourth{
+                grid-area: fourth;
+            }
+            .fifth{
+                grid-area: fifth;
+            }
+            .sixth{
+                grid-area: sixth;
+            }
+
+            .item{
+                width: 230px;
+                border: 1px solid #ABB2BF;
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                
+
+                h4{
+                    padding: 10px;
+                    font-size: 16px;
+                    font-weight: 600;color: white;
+                    text-transform: capitalize;
+                    border-bottom: 1px solid #ABB2BF;
+                }
+
+                p{
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #ABB2BF;
+                    padding: 10px ;
+                    line-height: 32px;
+
+                    .important{
+                        color: #C778DD;
+
+                        span{
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media (min-width: 1600px){
+    .skills-container{
+        .top{
+            
+            div{
+                h3{
+                    font-size: 38px;
+                }
+            }
+        }
+
+        .bottom{
+            .content{
+
+                .item{
+                    h4{
+                        font-size: 18px;
+                    }
+                    p{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1250px)  {
+    .skills-container{
+
+        
+        .bottom{
+            
+            .shapes{
+    
+                img{
+                    width: 250px;
+                }
+            }
+            .content{
+                grid-template-columns: repeat(2 , 1fr);
+                grid-template-areas: 
+                "first second "
+                "third fourth "
+                "fifth sixth"
+                ;
+            }
+        }
+    }
+}
+
+@media (max-width: 850px)  {
+    .skills-container{
+        .top{
+            div{
+                padding: 0 20px;
+                
+                h3{
+                    font-size: 20px;
+    
+                    span{
+                        font-size: 20px;
+                    }
+                }
+
+                .line{
+                    width: 100px;
+                }
+            }
+
+        .line{
+            width: 50px;
+        }
+     }
+    }
+
+        
+        .bottom{
+            flex-direction: column;
+            .shapes{
+                display: none;
+                img{
+                    width: 350px;
+                }
+            }
+            .content{
+                grid-template-columns: repeat(2 , 1fr);
+                grid-template-areas: 
+                "first second "
+                "third fourth "
+                "fifth sixth"
+                ;
+                width: 100%;
+                justify-items: center;
+            }
+        }
+    }
+ 
+
+@media (max-width: 500px)  {
+    .skills-container{
+
+        .top{
+            div{
+                h3{
+                    font-size: 20px;
+    
+                    span{
+                        font-size: 20px;
+                    }
+                }
+            }
+    
+            span{
+               font-size: 14px;
+            }
+    
+            .line{
+                width: 100px;
+            }
+         }
+        
+        .bottom{
+            flex-direction: column;
+            .shapes{
+                display: none;
+                img{
+                    width: 350px;
+                }
+            }
+            .content{
+                grid-template-columns: repeat(1 , 1fr);
+                grid-template-areas: 
+                "first"
+                "second"
+                "third"
+                "fourth"
+                "fifth"
+                "sixth"
+                ;
+                width: 100%;
+                row-gap: 20px;
+                justify-items: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,109 @@
+.about-page-container{
+    display: flex;
+    width: 100%;
+    background-color: #282C33;
+    position: relative;
+    flex-direction: column;
+
+
+    .wrapper{
+        max-width: 1440px;
+        width: 80%;
+        margin: 0 auto;
+
+
+        
+
+
+        .skills-table{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 60px 0;
+            margin-bottom: 50px;
+
+            h3{
+                font-size: 32px;
+                font-weight: 500;
+                color: white;
+                span{
+                    font-size: 32px;
+                    font-weight: 500;
+                    color: #C778DD;
+                    margin-right: 5px;
+                }
+            }
+
+            .items{
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+
+
+                .item{
+                    width: 230px;
+                    border: 1px solid #ABB2BF;
+                    display: flex;
+                    gap: 10px;
+                    flex-direction: column;
+                    
+    
+                    h4{
+                        padding: 10px;
+                        font-size: 16px;
+                        font-weight: 600;color: white;
+                        text-transform: capitalize;
+                        border-bottom: 1px solid #ABB2BF;
+                    }
+    
+                    p{
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #ABB2BF;
+                        padding: 10px ;
+                        line-height: 32px;
+
+                        .important{
+                            color: #C778DD;
+    
+                            span{
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1044px) {
+    .about-page-container{
+
+        .wrapper{
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 786px) {
+    .about-page-container{
+
+        .wrapper{
+            width: 100%;
+            // padding: 0px 20px;
+
+
+            .skills-table{
+
+                h3{
+                    padding: 0 20px;
+                }
+
+                .items{
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+}

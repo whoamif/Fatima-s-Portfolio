@@ -1,0 +1,33 @@
+.home-container{
+    display: flex;
+    width: 100%;
+    background-color: #282C33;
+    position: relative;
+    flex-direction: column;
+
+
+    .wrapper{
+        max-width: 1440px;
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1044px) {
+    .home-container{
+
+        .wrapper{
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 786px) {
+    .home-container{
+
+        .wrapper{
+            width: 100%;
+            // padding: 0px 20px;
+        }
+    }
+}

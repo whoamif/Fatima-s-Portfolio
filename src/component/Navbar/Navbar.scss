@@ -1,0 +1,315 @@
+.nav-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+    position: relative;
+  
+
+    // background-color: red;
+
+    .falling-contact{
+        position: fixed;
+        top: 0;
+        left: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        animation: linkDrop .5s .5s  ease-in forwards;
+        transform: translateY(-350px);
+
+        .line-div{
+            height: 200px;
+            width: 1px;
+            background-color: #ABB2BF;
+
+        }
+
+        .icons{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            
+            a{
+                color: rgb(171, 178, 191);
+                transition: all 0.3s ;
+
+                :hover{
+                    color: white;
+                }
+
+                .icon{
+                    width: 25px;
+                    height: 25px;
+                    
+                }
+            }
+        }
+    }
+
+    h1{
+        
+        a{
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+        }
+    }
+
+    nav{
+        display: block;
+
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+
+            li{
+                list-style: none;
+
+                span{
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #C778DD;
+                    margin-right: 2px;
+                }
+                a{
+                    text-decoration: none;
+
+                    &:hover{
+                        color: white;
+                    }
+                }
+
+                .color-white{
+                    color: white;
+                    
+                }
+                .color-gray{
+                    color: #ABB2BF;
+
+                }
+            }
+        }
+    }
+    .menu-icons{
+        display: none;
+    }
+}
+
+
+@keyframes linkDrop {   
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@media (min-width: 1600px) {
+      .nav-container{
+        
+        .falling-contact{
+            
+            .icons{
+                a{
+                    .icon{
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+        h1{
+            a{
+                font-size: 24px;
+            }
+        }
+
+        nav{
+            ul{
+                a{
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1044px) {
+    .nav-container{
+        
+        .falling-contact{
+            left: -40px;
+            
+
+            .line-div{
+                height: 140px;
+            }
+
+            .icons{
+
+                a{
+                    
+                    .icon{
+                        width: 20px;
+                        height: 20px;
+                        
+                    }
+                }
+
+            }
+        }
+
+        nav{
+            display: block;
+        }
+    }
+
+    .sidebar-container{
+        display: none;
+    }
+}
+
+@media (max-width: 786px) {
+    .nav-container{
+       
+        .falling-contact{
+            // display: none;
+        }
+        
+        h1{
+            // font-size: 16px;
+            padding-inline: 20px;
+        }
+
+        nav{
+            display: block; 
+            padding-inline: 20px;
+            ul{
+
+                gap: 40px;
+                li{
+                    font-size: 14px;
+                }
+            }
+        }
+
+       
+    }
+}
+
+
+@media (max-width: 640px) {
+    .nav-container{
+
+        .menu-icons{
+            display: block;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        
+       
+        .falling-contact{
+            display: none;
+        }
+        
+        h1{
+            // font-size: 16px;
+            padding-inline: 20px;
+        }
+
+        nav{
+            display: none;
+        }
+    }
+
+    .sidebar-container{
+        height: 80vh;
+        width: 100vw;
+        background-color: #282C33;
+        display: block;
+        position: absolute;
+        transform: translateY(80px);
+        top: 0;
+        animation: menuDrop 0.7s cubic-bezier(0.7, -0.13,0.58, 1.38);
+        z-index: 10;
+
+        .sidebar{
+            position: relative;
+            display: flex;            
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 0px 20px;
+            // background-color: #C778DD;
+            height: 90%;
+
+            .links{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 40px;
+
+                a{
+                    // color: white;
+                    font-size: 32px;
+                    font-weight: 500;
+
+                    span{
+                        color: #C778DD;
+                        margin-right: 2px;
+                    }
+
+                }
+                .color-white{
+                    color: white;
+                    
+                }
+                .color-gray{
+                    color: #ABB2BF;
+    
+                }
+            }
+
+            .link-icon{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 50px;
+                cursor: pointer;
+                
+                a{
+                    color: rgb(171, 178, 191);
+                    transition: all 0.3s ;
+    
+                    :hover{
+                        color: white;
+                    }
+    
+                    .icon{
+                        width: 35px;
+                        height: 35px;
+                        
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+
+@keyframes menuDrop{
+    0%{
+        transform: translateY(-400px);
+    }
+    100%{
+        transform: translateY(80px);
+    }
+}

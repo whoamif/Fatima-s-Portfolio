@@ -1,0 +1,184 @@
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+    padding: 100px 0 200px 0;
+
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+        color: white;
+
+        div{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            
+            span{
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            h3{
+                font-size: 32px;
+                font-weight: 500;
+                span{
+                    font-size: 32px;
+                    font-weight: 500;
+                    color: #C778DD;
+                    margin-right: 2px;
+                }
+            }
+
+            .line{
+                height: 1px;
+                width: 200px;
+                background-color: #C778DD;
+            }
+        }
+        
+    }
+
+    .bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p{
+            font-size: 16px;
+            font-weight: 500;
+            color: #ABB2BF;
+            max-width: 500px;
+            line-height: 26px;
+            text-align: justify;
+        }
+
+        .message{
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 20px;
+            border: 1px solid #ABB2BF;
+            // margin-top: 30px;
+
+            span{
+                color: white;
+                font-weight: 600;
+                font-size: 16px;
+            }
+
+            .item{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #ABB2BF;
+                transition: all 0.5s;
+
+                a{
+                    color: #ABB2BF;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                span{
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #ABB2BF;
+                }
+                .icon{
+                    height: 25px;
+                    width: 25px;
+                }
+
+                &:hover{
+                    color: white;
+                    cursor: pointer;
+
+                    span{
+                        color: white;
+                    }
+                    a{
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+@media (min-width: 1600px){
+    .contact-container{
+        .top{
+            
+            div{
+                h3{
+                    font-size: 38px;
+                }
+            }
+        }
+
+        .bottom{
+            p{
+                font-size: 18px;
+            }
+
+            .message{
+                span{
+                    font-size: 18px;
+                }
+
+                .item{
+                    span{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 810px) {
+    .contact-container{
+        .top{
+            div{
+                padding: 0 20px;
+                
+                h3{
+                    font-size: 20px;
+    
+                    span{
+                        font-size: 20px;
+                    }
+                }
+
+                .line{
+                    width: 100px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 880px){
+    .contact-container{
+        padding-inline: 0;
+        .bottom{
+            flex-direction: column;
+            gap: 50px;
+            align-items: flex-start;
+            padding: 0 20px;
+
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+}
