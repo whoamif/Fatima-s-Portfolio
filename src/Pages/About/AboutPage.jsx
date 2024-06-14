@@ -50,13 +50,13 @@ const AboutPage = ({ path }) => {
                             <h4>Tools</h4>
                             <p>
                                 <span className='important'>#<span>Git</span></span>
-                                <span className='important'>#<span>GitHub</span></span>
-                                <span className='important'>#<span>VS-code</span></span>
-                                <span className='important'>#<span>Figma</span></span>
-                                <span className='important'>#<span>Vercel</span></span>
-                                <span className='important'>#<span>Blender</span></span>
-                                <span className='important'>#<span>Unity</span></span>
-                                Odoo
+                                <span className='important'>#<span>GitHub</span></span> <br />
+                                <span className='important'>#<span>VS-code</span></span> <br />
+
+                                <span className='important'>#<span>Figma</span></span> <br />
+                                <span className='important'>#<span>Vercel</span></span> <br /> 
+                                <span className='important'>#<span>Unity</span></span> <br />
+                                <span className='important'>#<span>Odoo</span></span> 
                             </p>
                         </div>
                     </div>
