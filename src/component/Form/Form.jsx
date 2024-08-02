@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import "./form.scss";
-import emailjs from 'emailjs-com';
+import toast, { Toaster } from 'react-hot-toast';
+import { Oval } from 'react-loader-spinner';
 
 const Form = () => {
     const [name, setName] = useState('');
@@ -9,37 +10,56 @@ const Form = () => {
     const [message, setMessage] = useState('');
     const [error, setError] = useState(false);
     const [sent, setSent] = useState(false);
-    const form = useRef();
+    const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PROFILE_KEY)
-          .then((result) => {
-            //   console.log(result.text);
-              setName("")
-              setEmail("")
-              setTitle("")
-              setMessage("")
-              if(result){
-                setError(false)
-                // console.log(error, result.text)
-              }
-              setSent(true)
-          }, (error) => {
-              console.log(error.text);
-              console.log("this is an error")
-              setError(true)
-              setSent(true)
-          });
-    }
+        setLoading(true);
+
+        try {
+            const response = await fetch('http://localhost:8000/submit-form/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    title,
+                    message,
+                }),
+            });
+
+            if (response.ok) {
+                toast.success("E-mail envoyé avec succès");
+                setName("");
+                setEmail("");
+                setTitle("");
+                setMessage("");
+                setError(false);
+                setSent(true);
+            } else {
+                toast.error("Envoi échoué");
+                setError(true);
+                setSent(true);
+            }
+        } catch (error) {
+            toast.error("Envoi échoué");
+            setError(true);
+            setSent(true);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div className='form-container' data-aos="zoom-in-up">
-            <form onSubmit={handleSubmit} ref={form}>
+            <Toaster />
+            <form onSubmit={handleSubmit}>
                 <div className="item">
                     <div className="form-item">
-                        <input type="text" value={name} onChange={(event) => setName(event.target.value)} name="name"  required/>
-                        <span >Name</span>
+                        <input type="text" value={name} onChange={(event) => setName(event.target.value)} name="name" required />
+                        <span>Name</span>
                     </div>
                     <div className="form-item">
                         <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} name="email" required />
@@ -48,20 +68,24 @@ const Form = () => {
                 </div>
                 <div className="item">
                     <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} name="title" required />
-                    <span >Title</span>
+                    <span>Title</span>
                 </div>
                 <div className="item">
-                    <textarea name="message" id="message" cols="30" rows="5"  value={message} onChange={(event) => setMessage(event.target.value)} required ></textarea>
+                    <textarea value={message} onChange={(event) => setMessage(event.target.value)} name="message" required></textarea>
                     <span>Message</span>
                 </div>
-                {sent && <div className='card'>
-                    <div className={`square ${!error ? "green" : "red"}`}></div>
-                    {!error ? 
-                    <div className="content successes">Message sent successfully! Thank you</div>
-                    : <div className="content fail ">Their was a problem ! Please retry </div>
-                }
-                </div>}
-                <button type="submit">Send</button>
+                <button type="submit" disabled={loading}>
+                    {loading ? (
+                        <Oval
+                            height={20}
+                            width={20}
+                            color="#fff"
+                            ariaLabel="loading"
+                        />
+                    ) : (
+                        "Send"
+                    )}
+                </button>
             </form>
         </div>
     );

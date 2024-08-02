@@ -1,0 +1,14 @@
+
+node_modules/.bin/
+
+*.js
+
+node_modules/\@babel/core/lib/config/files/
+
+node_modules/\@babel/core/lib/config/
+
+node_modules/\@babel/core/lib/config/
+
+node_modules/\@babel/core/lib/transformation/
+
+*.json
